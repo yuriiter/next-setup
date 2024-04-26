@@ -1,4 +1,4 @@
-export const cn = (classNames: (string | undefined | null | boolean)[]) =>
+export const cn = (...classNames: (string | undefined | null | boolean)[]) =>
   classNames
     .filter(
       (className) => typeof className === "string" && className.length > 0,

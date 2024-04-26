@@ -7,7 +7,7 @@ export default function Home() {
       <Box
         className="hello"
         sx={{ backgroundColor: "black", margin: "10px" }}
-        as="button"
+        component="button"
         onClick={() => alert()}
       >
         Hello world

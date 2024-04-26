@@ -14,7 +14,7 @@ export type AsProp = {
    * An override of the default HTML tag.
    * Can also be another component.
    */
-  as?: ElementType;
+  component?: ElementType;
 };
 
 /**
