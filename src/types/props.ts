@@ -1,6 +1,6 @@
-import { ElementType, PropsWithChildren } from "react";
-import { PolymorphicComponentProps } from "./polymorphicProps";
+import { CSSProperties, ElementType, PropsWithChildren } from "react";
 import { StyledObject } from "styled-components";
+import { PolymorphicComponentProps } from "./polymorphicProps";
 
 export type PropsWithClassName = {
   className?: string;
@@ -12,7 +12,7 @@ export type PropsWithSx = {
 
 export type StandardProps = PropsWithChildren &
   PropsWithClassName &
-  PropsWithSx;
+  PropsWithSx & { style?: CSSProperties };
 
 export type BoxProps<C extends ElementType> = PolymorphicComponentProps<
   C,
