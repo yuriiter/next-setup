@@ -1,17 +1,18 @@
-"use client";
-import { Box } from "@/components/Box";
+import { promisedTimeout } from "@/utils/utils";
+import { Home } from "@/views/Home";
 
-export default function Home() {
+const getData = async () => {
+  await promisedTimeout(3000);
+  return await fetch("https://google.com").then((res) => res.text());
+};
+
+export default async function page() {
+  const data = await getData();
+
   return (
     <main>
-      <Box
-        className="hello"
-        sx={{ backgroundColor: "black", margin: "10px" }}
-        component="button"
-        onClick={() => alert()}
-      >
-        Hello world
-      </Box>
+      <Home />
+      {data}
     </main>
   );
 }
