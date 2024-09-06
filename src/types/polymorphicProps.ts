@@ -1,8 +1,7 @@
 import {
-  ComponentPropsWithRef,
-  ComponentPropsWithoutRef,
-  ElementType,
-  JSXElementConstructor,
+    ComponentPropsWithoutRef,
+    ElementType,
+    JSXElementConstructor,
 } from "react";
 
 export type PropsOf<
@@ -37,10 +36,6 @@ export type InheritableElementProps<
   Props = {},
 > = ExtendableProps<PropsOf<C>, Props>;
 
-export type PropsWithMRef<C extends ElementType> = {
-  mRef?: ComponentPropsWithRef<C>["ref"];
-};
-
 /**
  * A more sophisticated version of `InheritableElementProps` where
  * the passed in `as` prop will determine which props can be included
@@ -48,4 +43,4 @@ export type PropsWithMRef<C extends ElementType> = {
 export type PolymorphicComponentProps<
   C extends ElementType,
   Props = {},
-> = InheritableElementProps<C, Props & AsProp> & PropsWithMRef<C>;
+> = InheritableElementProps<C, Props & AsProp>;

@@ -3,6 +3,9 @@ import StyledComponentsRegistry from "@/components/StyledComponentsRegistry";
 import { authOptions } from "@/lib/authOptions";
 import "@/styles/main.scss";
 import { getServerSession } from "next-auth";
+// import axios from "axios";
+
+// axios.defaults.withCredentials = true;
 
 export default async function RootLayout({
   children,
@@ -11,8 +14,10 @@ export default async function RootLayout({
 }) {
   const session = await getServerSession(authOptions);
 
+  // const [colorscheme] = useColorscheme();
+
   return (
-    <html>
+    <html lang="en">
       <body>
         {!session ? (
           <>Not authorized</>
